@@ -37,9 +37,10 @@ const router = createBrowserRouter(
             </ProtectedRoute>
           }
         />
-      </Route>
-      <Route path="/login" index element={<Login />} />
+         <Route path="/login" index element={<Login />} />
       <Route path="/register" index element={<Register />} />
+      </Route>
+     
     </>
   )
 );

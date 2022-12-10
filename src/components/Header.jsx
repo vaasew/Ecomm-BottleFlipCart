@@ -228,7 +228,7 @@ export default function Header() {
       >
         <Toolbar sx={{ display: "flex", gap: 2 }}>
           <Typography variant="h6" color="inherit">
-            <StyledLink to="/">Ecomm</StyledLink>
+            <StyledLink to="/">BottleFlipKart</StyledLink>
           </Typography>
           <SearchBar />
           <Box flexBasis={500} sx={{ display: { md: "flex" } }}>
@@ -242,7 +242,22 @@ export default function Header() {
                 Hello, {user.displayName ?? user.email}
               </Button>
             ) : (
+              <Box sx={{
+                display:"flex",
+                flexDirection:"row",
+                alignItems:"center",
+                justifyContent:"center",
+              }}>
               <Button color="inherit" href="/login">Login</Button>
+                
+                
+              <Typography variant="h6" sx={{
+                m:2,
+                display:"flex",
+                alignItems:"center",
+                justifyContent:"center",
+              }}>Hello, Anon</Typography>
+              </Box>
             )}
           </Box>
         </Toolbar>

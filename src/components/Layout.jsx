@@ -1,15 +1,23 @@
 import React from 'react'
-import {ThemeProvider,createTheme} from "@mui/material"
+import {ThemeProvider,createTheme, useMediaQuery} from "@mui/material"
 import { CssBaseline } from '@mui/material';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
 
-const theme=createTheme({
-    palette:{
-        mode:"light"
-    },
-});
+
+
 function Layout() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+const theme= React.useMemo(
+  () =>
+    createTheme({
+      palette: {
+        mode: prefersDarkMode ? 'dark' : 'light',
+      },
+    }),
+  [prefersDarkMode],
+);
+
   return (
     <ThemeProvider theme={theme}>
         <CssBaseline/>
